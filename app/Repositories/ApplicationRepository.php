@@ -18,7 +18,7 @@ class ApplicationRepository extends Repository implements RepositoryInterface
         $this->applicationWorkFlow = $applicationWorkFlow;
     }
 
-    public function create(array $data)
+    public function create(array $data): Model
     {
         $model = parent::create($data);
 

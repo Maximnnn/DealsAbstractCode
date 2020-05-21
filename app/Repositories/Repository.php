@@ -23,6 +23,8 @@ class Repository implements RepositoryInterface
     // create a new record in the database
     public function create(array $data): Model
     {
+        $model = get_class($this->model);
+        return new $model($data);
     }
 
     // update record in the database

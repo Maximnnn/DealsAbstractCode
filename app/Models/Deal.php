@@ -18,7 +18,7 @@ class Deal extends Model
 
     protected $statuses = ['ask', 'offer'];
 
-    public function __construct(array $params)
+    public function __construct(array $params = [])
     {
         $status = $params['status'] ?? self::STATUS_ASK;
 
@@ -27,8 +27,8 @@ class Deal extends Model
         }
 
         $params = [
-            'partnerId' => $params['partnerId'],
-            'applicationId' => $params['applicationId'],
+            'partnerId' => $params['partnerId'] ?? 0,
+            'applicationId' => $params['applicationId'] ?? 0,
             'status' => $status
         ];
         parent::__construct($params);

@@ -13,7 +13,7 @@ class Model implements \JsonSerializable
      * Model constructor.
      * @param array $params
      */
-    public function __construct(array $params)
+    public function __construct(array $params = [])
     {
         $this->params = $params;
     }
@@ -24,5 +24,10 @@ class Model implements \JsonSerializable
     public function jsonSerialize()
     {
         return $this->params;
+    }
+
+    public function __get($name)
+    {
+        return $this->params[$name] ?? null;
     }
 }

@@ -33,6 +33,6 @@ class DealRepository extends Repository implements RepositoryInterface
         $old = $this->show($id);
         $this->dealWorkFlow->onUpdateDeal($old, new $this->model);
 
-        return /*...*/;
+        return parent::update($data, $id);
     }
 }

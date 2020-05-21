@@ -10,10 +10,10 @@ class ApplicationStoreRequest extends AbstractRequest
 {
     public function getValidated(): array
     {
-        $this->validate([
-            'email' => 'required|email',
-            'sum'   => 'required|int|min:1'
-        ], $this->post());
+//        $this->validate([
+//            'email' => 'required|email',
+//            'sum'   => 'required|int|min:1'
+//        ], $this->post());
 
         return [
             'email' => $this->get('email'),
